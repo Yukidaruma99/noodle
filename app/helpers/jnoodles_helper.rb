@@ -1,0 +1,2 @@
+module JnoodlesHelper
+end
