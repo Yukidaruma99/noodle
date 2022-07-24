@@ -23,51 +23,11 @@
     </div>
   </article>
   <br>
-  <!-- <div class="columns is-centered">
+  <div class="columns is-centered">
     <div class="column">
       <figure>
         <div class="main-image"></div>
       </figure>
-    </div>
-  </div> -->
-</section>
-
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-multiline">
-
-      <% @jnoodles.each do |jnoodle| %>
-        <div class="column is-4">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-
-                <%= link_to jnoodle_path(jnoodle) do %>
-                  <%= attachment_image_tag jnoodle, :image %>
-                <% end %>
-
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <%= attachment_image_tag jnoodle.user, :profile_image, fallback: "no_noodle.png", class: "profile_image" %>
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <div class="title"><%#= link_to jnoodle.user.username, user_path(jnoodle.user) %></div>
-                </div>
-              </div>
-
-              <div class="content">
-                <time><%= jnoodle.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
     </div>
   </div>
 </section>
