@@ -23,38 +23,40 @@
       </div>
     <% end %>
 
-    <nav class="navbar is-warning">
+    <!-- ナビゲーションバー ロゴ部分 -->
+    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title is-4" style="font-family: cursive;">Izumo Noodle</h1>
+          <h1 class="title is-4">Izumo Noodle</h1>
         <% end %>
-        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
+      <!-- ナビゲーションバー部分 -->
       <% if user_signed_in? %>
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-item">
             <%= link_to "ラーメン一覧", jnoodles_path, class: "navbar-item button is-warning is-light" %>
           </div>
           <div class="navbar-item">
-            <%= link_to "ラーメン投稿", new_jnoodle_path, class: "navbar-item button is-warning is-light" %>
+            <%= link_to "投稿", new_jnoodle_path, class: "navbar-item button is-warning is-light" %>
           </div>
 
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
-                  <%= link_to "ユーザー", users_path, class: " button is-warning is-light" %>
+                  <%= link_to "ユーザー", users_path, class: "navbar-item button is-warning is-light" %>
                 </p>
                 <p class="control">
-                  <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
+                  <%= link_to "マイページ", user_path(current_user), class: "navbar-item button is-warning is-light" %>
                 </p>
                 <p class="control">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-item button is-warning is-light" %>
                 </p>
               </div>
             </div>
@@ -62,13 +64,12 @@
         </div>
 
       <% else %>
-
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-item">
             <%= link_to "ラーメン一覧", jnoodles_path, class: "navbar-item button is-warning is-light" %>
           </div>
           <div class="navbar-item">
-            <%= link_to "ラーメンマスター一覧", users_path, class: "navbar-item button is-warning is-light" %>
+            <%= link_to "ユーザー一覧", users_path, class: "navbar-item button is-warning is-light" %>
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
@@ -84,6 +85,12 @@
           </div>
         </div>
       <% end %>
+      
+      <!-- ナビゲーションバー バーガー部分 -->
+      
+
+
+
     </nav>
     <%= yield %>
   </body>

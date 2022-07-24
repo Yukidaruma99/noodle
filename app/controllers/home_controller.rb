@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  # def index
-  #   @jnoodles = Jnoodle.all.order(id: "DESC")
-  # end
+  def index
+    @jnoodles = Jnoodle.all.order(id: "DESC")
+  end
 end
