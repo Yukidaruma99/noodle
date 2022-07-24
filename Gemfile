@@ -72,3 +72,6 @@ gem 'devise-i18n'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
+# 画像ストレージ
+gem 'aws-sdk', '~> 2'
+
