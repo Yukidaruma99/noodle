@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("turbolinks:load", () => {
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
   if ($navbarBurgers.length > 0) {
     $navbarBurgers.forEach( el => {
